@@ -1,6 +1,6 @@
 # Search Based Message Extension with Single Sign On, Microsoft Graph and SharePoint Online
 
-This sample project demonstrates how to build a search based message extension that a user can query data in a SharePoint List and inject data into a message.
+This sample project demonstrates how to build a search based message extension that a user can use to query data in a SharePoint List and inject that data into a message as a card.
 
 The message extension can be used across Microsoft 365:
 
@@ -57,4 +57,3 @@ SECRET_AAD_APP_CLIENT_SECRET=
 ### Debug
 
 Press F5 and follow the instructions.
-
