@@ -29,8 +29,11 @@
     "m365OauthAuthorityHost": {
       "value": "${{AAD_APP_OAUTH_AUTHORITY_HOST}}"
     },
-    "m365SPODomain":{
-      "value": "${{M365_SPO_DOMAIN}}"
+    "spoHostname":{
+      "value": "${{SPO_HOSTNAME}}"
+    },
+    "spoSiteUrl":{
+      "value": "${{SPO_SITE_URL}}"
     }
   }
 }

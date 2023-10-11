@@ -24,7 +24,8 @@ param m365OauthAuthorityHost string
 param m365ApplicationIdUri string = 'api://botid-${botAadAppClientId}'
 @secure()
 param m365ClientSecret string
-param m365SPODomain string
+param spoHostname string
+param spoSiteUrl string
 
 // Compute resources for your Web App
 resource serverfarm 'Microsoft.Web/serverfarms@2021-02-01' = {
@@ -67,10 +68,6 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
           name: 'BOT_PASSWORD'
           value: botAadAppClientSecret
         }
-        {
-          name: 'M365_SPO_DOMAIN'
-          value: m365SPODomain
-        }
       ]
       ftpsState: 'FtpsOnly'
     }
@@ -100,7 +97,8 @@ resource webAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
     BOT_ID: botAadAppClientId
     BOT_PASSWORD: botAadAppClientSecret
     RUNNING_ON_AZURE: '1'
-    M365_SPO_DOMAIN: m365SPODomain
+    SPO_HOSTNAME: spoHostname
+    SPO_SITE_URL: spoSiteUrl
   }
 }
 
