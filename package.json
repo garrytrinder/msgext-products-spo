@@ -1,0 +1,41 @@
+{
+    "name": "msgextproductsspo",
+    "version": "1.0.0",
+    "description": "Microsoft Teams Toolkit message extension search sample",
+    "engines": {
+        "node": "16 || 18"
+    },
+    "author": "Microsoft",
+    "license": "MIT",
+    "main": "./lib/src/index.js",
+    "scripts": {
+        "dev:teamsfx": "env-cmd --silent -f .localConfigs npm run dev",
+        "dev": "nodemon --exec node --inspect=9239 --signal SIGINT -r ts-node/register ./src/index.ts",
+        "build": "tsc --build && copyfiles ./public/*.html lib/",
+        "start": "node ./lib/src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "nodemon --exec \"npm run start\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com"
+    },
+    "dependencies": {
+        "@microsoft/microsoft-graph-client": "3.0.7",
+        "@microsoft/teamsfx": "2.3.0",
+        "botbuilder": "4.20.1",
+        "isomorphic-fetch": "^3.0.0",
+        "restify": "11.1.0"
+    },
+    "devDependencies": {
+        "@microsoft/microsoft-graph-types": "2.38.0",
+        "@types/node": "18.18.3",
+        "@types/restify": "8.5.8",
+        "copyfiles": "2.4.1",
+        "env-cmd": "10.1.0",
+        "nodemon": "3.0.1",
+        "shx": "0.3.4",
+        "ts-node": "10.9.1",
+        "typescript": "5.2.2"
+    }
+}
